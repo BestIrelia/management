@@ -1,0 +1,35 @@
+<div data-role="page" ng-controller="editUserDetailCtr">
+    <div data-role="header" data-position="fixed">
+        <a href="#" data-rel="back">取消</a>
+        <h1>修改个人信息</h1>
+        <a href="#" ng-click="finishEditUser()">完成</a>
+    </div>
+    <div class="ui-content">
+        姓名：
+        <label for="uName"></label>
+        <input type="text" id="uName" value={{userDetail.name}} disabled>
+        手机：
+        <label for="uPhone"></label>
+        <input type="text" id="uPhone" value={{userDetail.phone}}>
+        邮箱：
+        <label for="uEmail"></label>
+        <input type="text" id="uEmail" value={{userDetail.email}}>
+        部门：
+        <label for="uDepartment"></label>
+        <input type="text" id="uDepartment" value={{userDetail.department}}>
+        职责：
+        <label for="uJob"></label>
+        <input type="text" id="uJob" value={{userDetail.job}}>
+        <div>
+            员工编号：
+            <label for="uEmployeeId"></label>
+            <input type="text" id="uEmployeeId" value={{userDetail.employee_id}}>
+            身份证号：
+            <label for="uIdCard"></label>
+            <input type="text" id="uIdCard" value={{userDetail.id_card}}>
+            居住地址：
+            <label for="uAddress"></label>
+            <input type="text" id="uAddress" value={{userDetail.address}}>
+        </div>
+    </div>
+</div>

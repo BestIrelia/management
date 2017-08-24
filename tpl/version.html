@@ -1,0 +1,14 @@
+
+<div data-role="page" ng-controller="versionCtr" class="bg2">
+    <div data-role="header">
+        <a href="#" data-icon="back" data-rel="back" data-iconpos="notext"></a>
+        <h1>版本信息</h1>
+    </div>
+    <div class="ui-content">
+        <p style="line-height: 1.5em;">&nbsp;&nbsp;当前版本：v{{version.version}}</p>
+
+        <button ng-click="checkUpdate()" style="margin-top: 15px">检查更新</button>
+        <p ng-hide="hide">当前已是最新版本</p>
+
+    </div>
+</div>

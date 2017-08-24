@@ -1,0 +1,46 @@
+<div data-role="page" ng-controller="editEmployeeDetailCtr">
+    <div data-role="header" data-position="fixed">
+        <!--<a href="#cancelDialog" data-rel="popup" data-position-to="window" data-transition="pop">取消</a>-->
+        <a href="#" data-rel="back">取消</a>
+        <h1>修改信息</h1>
+        <a href="#" ng-click="finishEdit()">完成</a>
+    </div>
+    <div class="ui-content">
+        姓名：
+        <label for="eName"></label>
+        <input type="text" id="eName" value={{employee.name}} disabled>
+        手机：
+        <label for="ePhone"></label>
+        <input type="text" id="ePhone" value={{employee.phone}}>
+        邮箱：
+        <label for="eEmail"></label>
+        <input type="text" id="eEmail" value={{employee.email}}>
+        部门：
+        <label for="eDepartment"></label>
+        <input type="text" id="eDepartment" value={{employee.department}}>
+        职责：
+        <label for="eJob"></label>
+        <input type="text" id="eJob" value={{employee.job}}>
+        <div ng-show="high">
+            员工编号：
+            <label for="eEmployeeId"></label>
+            <input type="text" id="eEmployeeId" value={{employee.employee_id}}>
+            身份证号：
+            <label for="eIdCard"></label>
+            <input type="text" id="eIdCard" value={{employee.id_card}}>
+            居住地址：
+            <label for="eAddress"></label>
+            <input type="text" id="eAddress" value={{employee.address}}>
+        </div>
+        <!--<div data-role="popup" id="cancelDialog" data-overlay-theme="b" data-dismissible="false" style="max-width:400px;">-->
+            <!--<div data-role="header" data-theme="a">-->
+                <!--<h1>取消编辑？</h1>-->
+            <!--</div>-->
+            <!--<div role="main" class="ui-content">-->
+                <!--<h3 class="ui-title">确定取消对该员工{{employee.name}}的信息修改?</h3>-->
+                <!--<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">取消</a>-->
+                <!--<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" ng-click="backToManagementDetail()" data-transition="flow">确定</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>

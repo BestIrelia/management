@@ -1,0 +1,72 @@
+<div data-role="page" ng-controller="mainCtr">
+    <div data-role="header" data-position="fixed">
+        <a href="#panel" data-icon="bullets" data-iconpos="notext" ng-show="isShowPanel"></a>
+        <h1>{{navTitle}}</h1>
+        <a data-icon={{icon}} data-iconpos="notext" ng-show="canShow" ng-click="clickFn()"></a>
+    </div>
+
+    <div class="ui-content">
+        <!--企业新闻-->
+        <div ng-show="isShowNews">
+            <p style="text-align: center" ng-hide="loadingMoreNews">Loading. . . </p>
+            <p style="text-align: center" ng-hide="hasMoreNews">没有更多数据可以加载了</p>
+            <ul data-role="listview" data-inset="true">
+                <li ng-repeat="news in newsList">
+                    <a ng-click="showDetailNews(news.nid)">
+                        <img ng-src="../img/{{news.img_sm}}" style="margin-top: 1em"/>
+                        <h2>{{news.title}}</h2>
+                        <p>{{news.detail_lead}}</p>
+                        <p>{{news.public_time}}</p>
+                    </a>
+                </li>
+            </ul>
+            <p style="text-align: center">已经到底部了，<a ng-click="loadMoreNews()">点击刷新</a></p>
+        </div>
+        <!--员工信息-->
+        <div ng-show="isShowManagement">
+            <label for="search"></label>
+            <input type="text" id="search" placeholder="请输入要搜索的姓名"
+            ng-model="kw"/>
+            <ul data-role="listview" data-inset="true">
+                <li ng-repeat="employee in managementList">
+                    <a ng-click="showDetailManagement(employee.mid)">
+                        <h3>{{employee.name}}</h3>
+                    </a>
+                </li>
+            </ul>
+            <button ng-show="hasMoreManagement" ng-click="loadMoreManagement()">加载更多</button>
+            <p ng-hide="hasMoreManagement">没有更多数据可以加载了</p>
+        </div>
+        <!--设置-->
+        <div ng-show="isShowSetting">
+            <ul data-role="listview">
+                <li class="panel-li" ng-click="jump('user.html')">个人信息</li>
+                <li class="panel-li" ng-click="jump('about.html')">关于我们</li>
+                <li class="panel-li" ng-click="jump('version.html')">版本信息</li>
+                <li class="panel-li" ng-click="jump('advice.html')">意见反馈</li>
+            </ul>
+            <button ng-click="jump('login.html')" style="margin-top: 2em">退出登录</button>
+        </div>
+
+    </div>
+
+    <div data-role="footer"
+         data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a id="news" data-icon="home" ng-click="showNews()">新闻</a></li>
+                <li><a id="management" data-icon="user" ng-click="showManagement()">员工信息</a></li>
+                <li><a id="setting" data-icon="gear" ng-click="showSetting()">设置</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--左侧导航栏-->
+    <div data-role="panel" data-display="push" id="panel" class="bg3">
+        <ul data-role="listview">
+            <li class="panel-li" ng-click="jump('about.html')">关于我们</li>
+            <li class="panel-li" ng-click="jump('version.html')">版本信息</li>
+            <li class="panel-li" ng-click="jump('advice.html')">意见反馈</li>
+        </ul>
+    </div>
+</div>

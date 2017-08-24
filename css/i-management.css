@@ -1,0 +1,34 @@
+/*全局样式*/
+body{
+    font-family: 'SimHei' !important;
+    margin: 50px 0 100px 0;
+}
+.align-center{
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.form-align-center{
+    margin-top: 100px;
+}
+.panel-li{
+    margin-top: 1em;
+}
+.newsTitle{
+    text-align: center;
+}
+/*页面背景*/
+.bg1{
+    background: url("../img/bg1.jpg") no-repeat left bottom;
+}
+.bg2{
+    background: url("../img/bg2.jpg") no-repeat right bottom;
+}
+.bg3{
+    background: url("../img/bg3.jpg") no-repeat right bottom;
+}
+.bg4{
+    background: url("../img/bg4.jpg") no-repeat right bottom;
+}

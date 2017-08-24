@@ -1,0 +1,19 @@
+<div data-role="page" ng-controller="loginCtr" class="bg2">
+    <div data-role="header">
+        <h1>账号登录</h1>
+    </div>
+
+    <div class="ui-content">
+        <form>
+            <label for="user">用户名</label>
+            <input type="text" id="user" ng-model="user" autofocus/>
+
+            <label for="pwd">密码</label>
+            <input type="password" id="pwd" ng-model="pwd"/>
+
+            <button ng-click="login()" style="margin-top: 15px">登  录</button>
+            <p ng-hide="hide">{{loginMsg}}</p>
+        </form>
+    </div>
+
+</div>

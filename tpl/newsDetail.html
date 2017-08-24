@@ -1,0 +1,13 @@
+<div data-role="page" ng-controller="newsDetailCtr">
+    <div data-role="header" data-position="fixed">
+        <a href="#" data-icon="back" data-rel="back" data-iconpos="notext" ng-click="backToNews()"></a>
+        <h1>新闻详情</h1>
+    </div>
+    <div class="ui-content">
+        <h1 class="newsTitle">{{news.title}}</h1>
+        <p style="text-align: right">{{news.public_time}}</p>
+        <p>【导读】{{news.detail_lead}}</p>
+        <img ng-src="../img/{{news.img_lg}}" alt="" style="max-width: 100%"/>
+        <p>{{news.detail}}</p>
+    </div>
+</div>
